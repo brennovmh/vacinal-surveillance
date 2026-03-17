@@ -5,8 +5,8 @@ process BAM_QC {
     tuple val(sample), path(bam)
 
     output:
-    path("${sample}.flagstat.txt"), emit: flagstat
-    path("${sample}.depth.tsv"), emit: depth
+    tuple val(sample), path("${sample}.flagstat.txt"), emit: flagstat
+    tuple val(sample), path("${sample}.depth.tsv"), emit: depth
 
     script:
     """
