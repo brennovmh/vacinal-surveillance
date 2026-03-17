@@ -1,0 +1,4 @@
+scheme	virus	lineage	position	ref	alt	region	weight	required
+PDK53	DENV2	vacinal	57	A	G	5UTR	1.0	true
+PDK53	DENV2	vacinal	448	T	C	NS1	1.0	true
+PDK53	DENV2	vacinal	4995	A	G	NS3	1.0	false
