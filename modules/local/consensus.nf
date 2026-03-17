@@ -2,14 +2,10 @@ process CONSENSUS {
     tag "$sample"
 
     input:
-    tuple val(sample), path(vcf)
-    tuple val(sample2), path(bam)
+    tuple val(sample), path(vcf), path(bam)
 
     output:
-    path("${sample}.consensus.fa"), emit: consensus
-
-    when:
-    sample == sample2
+    tuple val(sample), path("${sample}.consensus.fa"), emit: consensus
 
     script:
     """
