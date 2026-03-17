@@ -6,7 +6,7 @@ process VARIANT_CALL {
 
     output:
     tuple val(sample), path("${sample}.vcf.gz"), emit: vcf
-    path("${sample}.vcf.gz.csi"), emit: index
+    tuple val(sample), path("${sample}.vcf.gz.csi"), emit: index
 
     script:
     """
