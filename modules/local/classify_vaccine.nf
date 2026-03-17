@@ -1,14 +1,12 @@
 process CLASSIFY_VACCINE {
-    tag "$consensus.baseName"
+    tag "$sample"
 
     input:
-    path(consensus)
-    tuple val(sample), path(vcf)
-    path(depth)
+    tuple val(sample), path(consensus), path(vcf), path(depth)
 
     output:
-    path("${sample}.classification.tsv"), emit: per_sample
-    path("classification_summary.tsv"), emit: summary
+    path("${sample}.classification.details.tsv"), emit: details
+    path("${sample}.classification.summary.tsv"), emit: summary
 
     script:
     """
@@ -19,6 +17,5 @@ process CLASSIFY_VACCINE {
       --depth ${depth} \
       --markers ${params.markers} \
       --min-depth ${params.min_depth}
-
     """
 }
