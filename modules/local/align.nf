@@ -6,7 +6,7 @@ process ALIGN {
 
     output:
     tuple val(sample), path("${sample}.sorted.bam"), emit: bam
-    path("${sample}.sorted.bam.bai"), emit: bai
+    tuple val(sample), path("${sample}.sorted.bam.bai"), emit: bai
 
     script:
     """
