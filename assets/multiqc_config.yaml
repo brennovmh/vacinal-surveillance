@@ -1,0 +1,28 @@
+title: "Relatório de vigilância genômica vacinal"
+subtitle: "Classificação de amostras por marcadores vacinais"
+intro_text: "Este relatório resume controle de qualidade, alinhamento, profundidade e classificação das amostras quanto à compatibilidade com origem vacinal."
+
+report_comment: "Pipeline Nextflow para vigilância genômica baseada em FASTQ paired-end."
+
+custom_logo_title: "Vigilância Genômica"
+
+show_analysis_paths: false
+disable_version_detection: false
+
+extra_fn_clean_exts:
+  - ".tsv"
+  - ".txt"
+  - ".json"
+  - ".gz"
+
+table_columns_visible:
+  FastQC:
+    percent_duplicates: true
+    total_sequences: true
+
+custom_data:
+  vaccine_classification_mqc:
+    id: "vaccine_classification_table"
+    section_name: "Resumo por amostra"
+    description: "Tabela consolidada com classificação vacinal e score por amostra."
+    plot_type: "table"
